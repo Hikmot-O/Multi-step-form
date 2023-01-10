@@ -1,0 +1,145 @@
+.home{
+    border-radius: 1.5rem;
+    width: 88rem;
+    height: 55rem;
+    font-size: 1.6rem;
+    color: var(--white);
+    background: var(--white);
+    /* margin: auto; */
+    padding: 1.4rem;
+    display:flex;
+}
+.steps{
+    padding: 4rem 3rem;
+    border-radius: 1rem;
+    width: 40%;
+    height: 100%;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: url('../assets/images/bg-sidebar-desktop.svg');
+}
+.step{
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    text-decoration: none;
+    margin-bottom: 3rem;
+}
+.step-number{
+    display: flex;
+    width: 30px;
+    height: 30px;
+    font-weight: 500;
+    font-size: 1.32rem;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    margin: 0;
+}
+/* .step:active.step-number,
+.step:visited.step-number,
+.step::after.step-number{
+    background: var(--Light-blue);
+    color: var(--Marine-blue);
+} */
+.step p{
+    margin-bottom: .3rem;
+    color: var(--Light-gray);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+}
+.step h5{
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 1.32rem;
+    font-weight: 500;
+}
+.home-right{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 3rem calc(8.7rem - 1.4rem) 0 8.7rem;
+}
+.btn-container{
+    font-family: "Ubuntu", sans-serif !important;
+    width: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.btn-container p{
+    color: var(--Cool-gray);
+}
+button{
+    font-size: 1.5rem;
+    color: var(--Magnolia);
+    border: none;
+    border-radius: .7rem;
+    background: var(--Marine-blue);
+    padding: 1.5rem 3rem;
+}
+
+@media only screen and (max-width: 992px){
+    .home{
+        flex-direction: column;
+        width: 100%;
+        top: 0;
+        position: absolute;
+        height: 100%;
+        border-radius: 0;
+        background: none;
+        padding: 0;
+    }
+    .steps{
+        background-size: cover;
+        background-position: center;
+        background-image: url('../assets/images/bg-sidebar-mobile.svg');
+        width: 100%;
+        height: 25rem;
+        border-radius: 0;
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 2rem;
+        padding: 0;
+    }
+    .step{
+        padding-top: 4rem;
+        margin-bottom: 0;
+    }
+    .step div:last-child{
+        display: none;
+        color: blueviolet;
+    }
+    .step-number{
+        width: 3.8rem;
+        height: 3.8rem;
+    }
+    .home-right{
+        width: 100%;
+        padding: 0;
+        height: calc(100% - 25rem + 73px);
+        height: 100%;
+    }
+    .btn-container{
+        background-color: var(--white);
+        width: 100%;
+        margin-bottom: 0;
+        justify-self:flex-end;
+        padding: 1.5rem;
+    }
+    .btn-container p{
+        font-size: 1.5rem;
+    }
+    button{
+        border-radius: .6rem;
+        padding: 1.3rem 1.8rem;
+    }
+}

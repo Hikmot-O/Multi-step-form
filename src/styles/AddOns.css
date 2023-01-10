@@ -1,0 +1,49 @@
+.addOns {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid var(--Light-gray);
+  border-radius: 0.7rem;
+  padding: 1.7rem;
+  width: calc((608.77px - 73px - 87px));
+}
+.addOns:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.addOns:first-of-type {
+  margin-top: 3.5rem;
+}
+.addOns p {
+  font-size: 1.4rem;
+}
+.addOns p:first-child {
+  color: var(--Marine-blue);
+  font-size: 1.5rem;
+}
+.addOns input {
+  margin-right: 2rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  padding: 0.3rem;
+  border-radius: 1rem;
+}
+/* .addOns input:checked,
+.addOns input:active{
+    background: var(--Purplish-blue);
+} */
+/* input::content{
+    width: .5rem;
+} */
+.addOns .price {
+  color: var(--Purplish-blue);
+}
+.addOns-left {
+  display: flex;
+  align-items: center;
+}
+
+@media only screen and (max-width: 992px){
+    .addOns{
+        width: 100%;
+    }
+}

@@ -8,7 +8,6 @@ import Thankyou from "./components/Thankyou";
 
 function App() {
   return (
-    <>
       <Routes>
         <Route path="/" element={<Home />}>
           <Route path="/" element={<Info />} />
@@ -19,7 +18,6 @@ function App() {
           <Route path='/thankyou' element={<Thankyou />} />
         </Route>
       </Routes>
-    </>
   );
 }
 

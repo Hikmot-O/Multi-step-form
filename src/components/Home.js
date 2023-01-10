@@ -1,8 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Outlet, Link } from "react-router-dom";
+import AuthContext from "../store/auth-context";
 import "../styles/Home.css";
 
 const Home = () => {
+  const ctx = useContext(AuthContext);
+  console.log(ctx);
+
+  const fowardHandler = () => {
+    ctx.fowardPagination();
+  };
+
+  const backwardHandler = () => {
+    ctx.backwardPagination();
+  };
+
   return (
     <div className="home">
       {/* <div></div> */}
@@ -40,8 +52,14 @@ const Home = () => {
       <div className="home-right">
         <Outlet className="outlet"></Outlet>
         <div className="btn-container">
-          <p>Go Back</p>
-          <button>Next step</button>
+          {ctx.currentPage !== 1 && ctx.currentPage !== ctx.pages.length && <p onClick={backwardHandler}>Go Back</p>}
+          {ctx.currentPage !== ctx.pages.length && (
+            <button onClick={fowardHandler}>
+              {ctx.currentPage === ctx.pages.length - 1
+                ? "Confirm"
+                : "Next step"}
+            </button>
+          )}
         </div>
       </div>
     </div>

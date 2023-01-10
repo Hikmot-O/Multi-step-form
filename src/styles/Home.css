@@ -68,11 +68,12 @@
 }
 .btn-container{
     font-family: "Ubuntu", sans-serif !important;
-    width: inherit;
+    width: 100%; /*Check thiss*/
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 1.5rem;
+    /* position: relative; */
 }
 .btn-container p{
     color: var(--Cool-gray);
@@ -84,6 +85,9 @@ button{
     border-radius: .7rem;
     background: var(--Marine-blue);
     padding: 1.5rem 3rem;
+    /* position: absolute; */
+    /* right: 0; */
+    /* justify-content: flex-end; */
 }
 
 @media only screen and (max-width: 992px){

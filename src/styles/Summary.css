@@ -37,12 +37,17 @@
     color: var(--Marine-blue);
     font-weight: 500;
 }
+.summary-addOns-box{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
 .summary-addOns:first-of-type {
-  margin-top: 3.5rem;
+  /* margin-top: 3.5rem; */
 }
-.summary div:nth-child(2){
+/* .summary div:nth-child(2){
     margin-bottom: 2rem;
-}
+} */
 .summary-total{
   padding: 1.8rem;
 }

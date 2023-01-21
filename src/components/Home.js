@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Outlet, Link } from "react-router-dom";
+import { Outlet, Link, useLocation } from "react-router-dom";
 import AuthContext from "../store/auth-context";
 import "../styles/Home.css";
 
@@ -7,8 +7,16 @@ const Home = () => {
   const ctx = useContext(AuthContext);
   console.log(ctx);
 
+  const location = useLocation();
+  let path = location.pathname;
+
   const fowardHandler = () => {
-    ctx.fowardPagination();
+    // ctx.fowardPagination();
+    if(path === '/info' || path === '/') ctx.infoSubmitHandler();
+    
+    if(path === '/plans') ctx.planSubmitHandler();
+
+    if(path === '/add-ons') ctx.addonsSubmitHandler();
   };
 
   const backwardHandler = () => {
@@ -26,7 +34,7 @@ const Home = () => {
             <h5>Your Info</h5>
           </div>
         </Link>
-        <Link className="step" to="/plans">
+        <Link className="step" to={ctx.selectedPlan ? "/plans" : '/'}>
           <div className="step-number">2</div>
           <div>
             <p>Step 2</p>

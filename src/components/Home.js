@@ -8,6 +8,7 @@ const Home = () => {
   console.log(ctx);
 
   const location = useLocation();
+  // console.log(location)
   let path = location.pathname;
 
   const fowardHandler = () => {
@@ -17,6 +18,10 @@ const Home = () => {
     if(path === '/plans') ctx.planSubmitHandler();
 
     if(path === '/add-ons') ctx.addonsSubmitHandler();
+
+    if(path === '/summary') ctx.fowardPagination();
+
+    // if(path === '/thankyou') return;
   };
 
   const backwardHandler = () => {
@@ -27,34 +32,34 @@ const Home = () => {
     <div className="home">
       {/* <div></div> */}
       <div className="steps">
-        <Link className="step" to="/info">
-          <div className="step-number">1</div>
+        <div className="step" /*to="/info"*/>
+          <div className={path === '/info' || path === '/' ? "step-number-active step-number" : "step-number"}>1</div>
           <div>
             <p>Step 1</p>
             <h5>Your Info</h5>
           </div>
-        </Link>
-        <Link className="step" to={ctx.selectedPlan ? "/plans" : '/'}>
-          <div className="step-number">2</div>
+        </div>
+        <div className="step" /*to={ctx.selectedPlan || ctx.infoIsValid ? "/plans" : '/info'}*/>
+          <div className={path === '/plans' || path === '/' ? "step-number-active step-number" : "step-number"}>2</div>
           <div>
             <p>Step 2</p>
             <h5>Select Plan</h5>
           </div>
-        </Link>
-        <Link className="step" to="/add-ons">
-          <div className="step-number">3</div>
+        </div>
+        <div className="step" /*to={ctx.addOns || (ctx.infoIsValid && ctx.selectedPlan) ? "/add-ons" : '/info'}*/>
+          <div className={path === '/add-ons' || path === '/' ? "step-number-active step-number" : "step-number"}>3</div>
           <div>
             <p>Step 3</p>
             <h5>Add-Ons</h5>
           </div>
-        </Link>
-        <Link className="step" to="/summary">
-          <div className="step-number">4</div>
+        </div>
+        <div className="step" /*to={(ctx.infoIsValid && ctx.selectedPlan && ctx.addOns) ? "/summary" : '/info'}*/>
+          <div className={path === '/summary' || path === '/' ? "step-number-active step-number" : "step-number"}>4</div>
           <div>
             <p>Step 4</p>
             <h5>Summary</h5>
           </div>
-        </Link>
+        </div>
         {/* <button>Next Step</button> */}
       </div>
       <div className="home-right">

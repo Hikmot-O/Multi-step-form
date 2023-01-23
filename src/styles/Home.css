@@ -40,6 +40,11 @@
     border-radius: 50%;
     margin: 0;
 }
+.step-number-active{
+    background: var(--Light-blue);
+    color: var(--Marine-blue);
+    border: none;
+}
 /* .step:active.step-number,
 .step:visited.step-number,
 .step::after.step-number{

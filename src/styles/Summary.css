@@ -56,3 +56,9 @@
   font-size: 1.9rem;
   font-weight: 700;
 }
+
+@media only screen and (max-width: 992px){
+  .summary-section{
+    width: none;
+  }
+}

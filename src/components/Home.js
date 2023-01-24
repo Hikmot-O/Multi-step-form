@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Outlet, Link, useLocation } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 import AuthContext from "../store/auth-context";
 import "../styles/Home.css";
 
@@ -8,7 +8,6 @@ const Home = () => {
   console.log(ctx);
 
   const location = useLocation();
-  // console.log(location)
   let path = location.pathname;
 
   const fowardHandler = () => {
@@ -21,7 +20,6 @@ const Home = () => {
 
     if(path === '/summary') ctx.fowardPagination();
 
-    // if(path === '/thankyou') return;
   };
 
   const backwardHandler = () => {
@@ -40,27 +38,26 @@ const Home = () => {
           </div>
         </div>
         <div className="step" /*to={ctx.selectedPlan || ctx.infoIsValid ? "/plans" : '/info'}*/>
-          <div className={path === '/plans' || path === '/' ? "step-number-active step-number" : "step-number"}>2</div>
+          <div className={path === '/plans' ? "step-number-active step-number" : "step-number"}>2</div>
           <div>
             <p>Step 2</p>
             <h5>Select Plan</h5>
           </div>
         </div>
         <div className="step" /*to={ctx.addOns || (ctx.infoIsValid && ctx.selectedPlan) ? "/add-ons" : '/info'}*/>
-          <div className={path === '/add-ons' || path === '/' ? "step-number-active step-number" : "step-number"}>3</div>
+          <div className={path === '/add-ons' ? "step-number-active step-number" : "step-number"}>3</div>
           <div>
             <p>Step 3</p>
             <h5>Add-Ons</h5>
           </div>
         </div>
         <div className="step" /*to={(ctx.infoIsValid && ctx.selectedPlan && ctx.addOns) ? "/summary" : '/info'}*/>
-          <div className={path === '/summary' || path === '/' ? "step-number-active step-number" : "step-number"}>4</div>
+          <div className={path === '/summary' || path === '/thankyou' ? "step-number-active step-number" : "step-number"}>4</div>
           <div>
             <p>Step 4</p>
             <h5>Summary</h5>
           </div>
         </div>
-        {/* <button>Next Step</button> */}
       </div>
       <div className="home-right">
         <Outlet className="outlet"></Outlet>

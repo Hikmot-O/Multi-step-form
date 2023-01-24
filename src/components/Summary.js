@@ -13,7 +13,7 @@ const Summary = () => {
     PLAN_PRICE = +ctx.selectedPlan?.price.slice(1, -3);
   }
   let ADDONS_TOTAL = 0;
-  storedADDONS?.map((addon) => {
+  storedADDONS?.forEach((addon) => {
     ADDONS_TOTAL += +addon.price.slice(2, -3);
   });
   console.log(ADDONS_TOTAL);

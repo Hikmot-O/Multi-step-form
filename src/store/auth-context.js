@@ -83,29 +83,6 @@ export const AuthContextProvider = (props) => {
     ],
   };
 
-  const ADDONS_DATA = [
-    {
-      id: "addon-1",
-      title: "Online service",
-      perk: "Access to multiplayer games",
-      price: ismonthlyPlan ? "+$1/mo" : "+$10/yr",
-      checked: false,
-    },
-    {
-      id: "addon-2",
-      title: "Larger storage",
-      perk: "Extra 1TB of cloud save",
-      price: ismonthlyPlan ? "+$2/mo" : "+$20/yr",
-      checked: false,
-    },
-    {
-      id: "addon-3",
-      title: "Customizable profile",
-      perk: "Custom theme on your profile",
-      price: ismonthlyPlan ? "+$3/mo" : "+$30/yr",
-      checked: false,
-    },
-  ];
 
   const [infoIsValid, setInfoIsValid] = useState(false);
   const [enteredInfo, setEnteredInfo] = useState({
@@ -176,7 +153,7 @@ export const AuthContextProvider = (props) => {
 
 //   const [ADDONS, setADDONs] = useState([])
 
-  const [DATA, setDATA] = useState(ADDONS_DATA);
+//   const [DATA, setDATA] = useState(ADDONS_DATA);
 //   const [storedADDONS, setStoredADDONS] = useState([])
   const storedADDONS = selectedAddons.filter((addon) => addon.checked === true)
   //Addons
@@ -207,7 +184,7 @@ export const AuthContextProvider = (props) => {
   const addonsSubmitHandler = () => {
     // if (selectedAddons.length !== 0) {
     //   fowardPaginationHandler(); newAddOn.filter((addon) => addon.checked === true)
-    selectedAddons.map((addon) => {
+    selectedAddons.forEach((addon) => {
         if(addon.checked === true){
 
             fowardPaginationHandler();

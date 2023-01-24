@@ -45,12 +45,6 @@
     color: var(--Marine-blue);
     border: none;
 }
-/* .step:active.step-number,
-.step:visited.step-number,
-.step::after.step-number{
-    background: var(--Light-blue);
-    color: var(--Marine-blue);
-} */
 .step p{
     margin-bottom: .3rem;
     color: var(--Light-gray);

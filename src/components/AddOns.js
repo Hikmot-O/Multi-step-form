@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import AuthContext from "../store/auth-context";
 // import checkmark from "../assets/images/icon-checkmark.svg";
 import "../styles/AddOns.css";
